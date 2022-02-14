@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/bmateu/hexagon-project/codename-hexagon/src/Entity'
+let g:netrw_dirhist_8='/home/bmateu/hexagon-project/codename-hexagon/src'
+let g:netrw_dirhist_7='/home/bmateu/hexagon-project/codename-hexagon/src/Controller'
+let g:netrw_dirhist_6='/home/bmateu/hexagon-project/codename-hexagon/src/Controller/Admin'
+let g:netrw_dirhist_5='/home/bmateu/hexagon-project/codename-hexagon/src/Controller/Admin/Type'
+let g:netrw_dirhist_4='/home/bmateu/hexagon-project/codename-hexagon'
+let g:netrw_dirhist_3='/home/bmateu/hexagon-project/codename-hexagon/src/Entity'
+let g:netrw_dirhist_2='/home/bmateu/hexagon-project/codename-hexagon'
+let g:netrw_dirhist_1='/home/bmateu/hexagon-project/codename-hexagon/src/Controller/Admin/Type'
+let g:netrw_dirhist_0='/home/bmateu/hexagon-project/codename-hexagon/src/Controller/Admin'

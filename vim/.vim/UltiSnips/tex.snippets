@@ -1,0 +1,21 @@
+priority -50
+
+snippet verb "verbatim"
+\verb!${1:${VISUAL:command}}!$2
+endsnippet
+
+snippet note "note"
+\note<${1:${VISUAL:1}}>[${2:${VISUAL:item}}]{$3}
+endsnippet
+
+snippet colorblock "xxxblock"
+\begin{${1:${VISUAL:blueblock}}}{${2:${VISUAL:title}}}
+    ${3:${VISUAL:content}}
+\end{${4:$1}}
+endsnippet
+
+snippet minip "minipage"
+\begin{minipage}{${1:${VISUAL:.49\\linewidth}}}
+    $2
+\end{minipage}
+endsnippet
