@@ -19,3 +19,13 @@ snippet minip "minipage"
     $2
 \end{minipage}
 endsnippet
+
+snippet showcase "showcase"
+\begin{showcase}{showcase ${1:${VISUAL:blue}}}{${2:${VISUAL:icons}}}
+    $3
+\end{showcase}
+endsnippet
+
+snippet includegraphics "includegraphics"
+\includegraphics[width=${1:${VISUAL:0.9}}${2:${VISUAL:\\textwidth}}]{$3}
+endsnippet

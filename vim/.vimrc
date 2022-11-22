@@ -19,6 +19,7 @@ command Pdfopen :!evince %:r.pdf&
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$\| \+\ze\t/
 
+set encoding=utf-8
 let g:deoplete#enable_at_startup = 1
 " set list listchars=nbsp:¡
 

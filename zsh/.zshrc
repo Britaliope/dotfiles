@@ -223,8 +223,8 @@ unsetopt hup
 ###############################################
 
 # Nombre d'entrées dans l'historique
-export HISTORY=1000
-export SAVEHIST=1000
+export HISTORY=10000
+export SAVEHIST=10000
 
 # Fichier où est stocké l'historique
 export HISTFILE=$HOME/.history
