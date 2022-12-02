@@ -33,7 +33,7 @@ markup=none
 
 
 # Volume indicator
-[volume-pulseaudio]
+[volume-pipewire]
 interval=once
 signal=1
 #MIXER=[determined automatically]
