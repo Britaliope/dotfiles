@@ -1,0 +1,8 @@
+URxvt*font: xft: DejaVu Sans Mono:size=14
+
+URxvt*scrollBar: false
+
+URxvt*transparent: true
+URxvt*shading: 30
+
+URxvt*foreground: #eeeeee
