@@ -1,0 +1,126 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+# Change $SCRIPT_DIR to the location of your scripts!
+
+#command=$SCRIPT_DIR/$BLOCK_NAME
+command=~/.config/i3blocks/scripts/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+
+# Volume indicator
+[volume-pipewire]
+interval=once
+signal=1
+#MIXER=[determined automatically]
+#SCONTROL=[determined automatically]
+##exposed format variables: ${SYMB}, ${VOL}, ${INDEX}, ${NAME}
+#LONG_FORMAT="${SYMB} ${VOL}% [${INDEX}:${NAME}]"
+#SHORT_FORMAT="${SYMB} ${VOL}% [${INDEX}]"
+#AUDIO_HIGH_SYMBOL='  '
+#AUDIO_MED_THRESH=50
+#AUDIO_MED_SYMBOL='  '
+#AUDIO_LOW_THRESH=0
+#AUDIO_LOW_SYMBOL='  '
+#AUDIO_DELTA=5
+#DEFAULT_COLOR="#ffffff"
+#MUTED_COLOR="#a0a0a0"
+#USE_ALSA_NAME=0
+#USE_DESCRIPTION=0
+## SUBSCRIBE=1 requires interval=persist and always uses LONG_FORMAT
+#SUBSCRIBE=0
+
+# # Network interface monitoring
+# #
+# # If the instance is not specified, use the interface used for default route.
+# # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
+# [iface]
+# #IFACE=wlan0
+# color=#00FF00
+# interval=10
+# separator=false
+#
+[iface]
+IFACE=enp6s0f3u1u4
+LABEL=dock:
+interval=10
+separator=true
+
+[wifi2]
+INTERFACE=wlan0
+label=wifi:
+interval=10
+separator=true
+
+[battery2]
+markup=pango
+interval=30
+
+# [bandwidth]
+# #INTERFACE=eth0
+# interval=5
+
+# Memory usage
+#
+# The type defaults to "mem" if the instance is not specified.
+[memory]
+label=MEM 
+separator=false
+interval=30
+
+[memory]
+label=SWAP 
+instance=swap
+separator=false
+interval=30
+
+# CPU usage
+[cpu_util_detailed]
+label=CPU
+markup=pango
+interval=-2
+#report_time=5
+#stats=usr nice sys iowait
+#format=%6.2f
+#warn=80
+#usr_color=green
+#nice_color=yellow
+#sys_color=red
+#iowait_color=grey
+#irq_color=purple
+#soft_color=violet
+#steal_color=orange
+#guest_color=cyan
+#gnice_color=blue
+#idle_color=white
+#total_color=white
+
+# Date Time
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=5
+
