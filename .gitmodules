@@ -1,6 +1,3 @@
-[submodule "vim/.vim/bundle/vim-snippets"]
-	path = vim/.vim/bundle/vim-snippets
-	url = git://github.com/honza/vim-snippets
 [submodule "vim/.vim/pack/my-packages/start/vim-elixir"]
 	path = vim/.vim/pack/my-packages/start/vim-elixir
 	url = https://github.com/elixir-editors/vim-elixir
@@ -8,3 +5,6 @@
 	path = i3/.config/i3blocks/i3blocks-contrib
 	url = git@github.com:Britaliope/i3blocks-contrib.git
 	branch = britaliope
+[submodule "vim/.vim/bundle/vim-snippets"]
+	path = vim/.vim/bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
