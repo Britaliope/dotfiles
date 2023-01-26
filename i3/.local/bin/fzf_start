@@ -1,0 +1,5 @@
+#!/bin/sh
+
+xdotool search --onlyvisible --classname URxvtFuzzy windowunmap \
+|| xdotool search --classname URxvtFuzzy windowmap \
+|| urxvt +sb +tr -name URxvtFuzzy -geometry 60x25 -e $1

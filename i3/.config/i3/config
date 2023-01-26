@@ -48,7 +48,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run
-bindsym $mod+d exec fzf_start fzf_filter
+bindsym $mod+d exec $HOME/.local/bin/fzf_start $HOME/.local/bin/fzf_filter
 
 for_window [instance="URxvtFuzzy"] floating enable
 for_window [instance="URxvtFuzzy"] sticky enable
