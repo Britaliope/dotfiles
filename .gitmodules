@@ -5,3 +5,6 @@
 	path = i3/.config/i3blocks/i3blocks-contrib
 	url = git@github.com:Britaliope/i3blocks-contrib.git
 	branch = britaliope
+[submodule "urxvt/.urxvt/ext/resize-font"]
+	path = urxvt/.urxvt/ext/resize-font
+	url = https://github.com/simmel/urxvt-resize-font.git
