@@ -2,7 +2,7 @@
 
 i3lock \
     --ignore-empty-password \
-    --image $(find /home/bmateu/.local/share/spotlight-from-reddit/lock -maxdepth 1 -name "*.jpg" | shuf -n1) \
+    --image $(find $HOME/.local/share/spotlight-from-reddit/lock -maxdepth 1 -name "*.jpg" | shuf -n1) \
     --force-clock --indicator \
     --ind-pos="x+470:y+h-106" --radius 48 --ring-width=4 \
     --inside-color=00000000 --ring-color=ffffff90 --keyhl-color=ffffffc0 --line-uses-inside \

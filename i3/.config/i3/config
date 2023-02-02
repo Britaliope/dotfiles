@@ -194,7 +194,7 @@ for_window [class=".*"] border pixel 3
 gaps inner 15
 gaps outer 5
 
-exec watch -n 600 -x feh --bg-fill --randomize /home/bmateu/.local/share/spotlight-from-reddit/wallpaper
+exec watch -n 600 -x feh --bg-fill --randomize $HOME/.local/share/spotlight-from-reddit/wallpaper
 
 bindsym $mod+Escape exec loginctl lock-session
 
