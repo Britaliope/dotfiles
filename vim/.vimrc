@@ -23,7 +23,7 @@ set expandtab
 
 source ~/.vim/bepo.vimrc
 
-set listchars=nbsp:¡
+set listchars=tab:→\ ,nbsp:␣
 set list
 
 " highlight trailing whitespaces and space before tabs
