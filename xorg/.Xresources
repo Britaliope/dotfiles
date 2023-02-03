@@ -3,6 +3,7 @@ URxvt*font: xft: DejaVu Sans Mono:size=14
 URxvt*scrollBar: false
 
 URxvt*perl-ext-common: default,resize-font/resize-font
+URxvt*url-launcher: firefox
 
 URxvt*transparent: true
 URxvt*shading: 30
