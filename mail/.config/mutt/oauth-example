@@ -1,0 +1,24 @@
+unmailboxes *
+
+set from="example@outlook.com"
+set realname="Jean DOUX"
+
+set mbox_type = Maildir
+set folder="$HOME/.local/var/mail/example-oauth/"
+
+set sendmail="msmtp -a example-oauth"
+
+mailboxes =Inbox
+mailboxes =Drafts
+mailboxes =Sent
+mailboxes =Junk
+mailboxes =Trash
+
+set spoolfile="+Inbox"
+set postponed="+Drafts"
+set record="+Sent"
+set trash="+Trash"
+
+set crypt_autopgp
+set crypt_autosign
+set crypt_autoencrypt

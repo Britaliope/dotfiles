@@ -1,0 +1,6 @@
+bind index,pager T sidebar-next
+bind index,pager S sidebar-prev
+bind index,pager C sidebar-open
+
+bind index,pager t next-entry
+bind index,pager s previous-entry

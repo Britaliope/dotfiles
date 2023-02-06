@@ -1,0 +1,10 @@
+[Unit]
+Description=Run mbsync at boot and every 30 minutes
+
+[Timer]
+OnBootSec=3min
+OnUnitActiveSec=30min
+Persistent=True
+
+[Install]
+WantedBy=timers.target

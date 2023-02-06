@@ -1,0 +1,22 @@
+defaults
+auth on
+tls on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+logfile $HOME/.config/msmtp/msmtp.log
+
+account normal-auth
+host z.example.com
+port 587
+tls_starttls on
+from normal.auth.email@example.com
+user normal.auth.email@example.com
+passwordeval "pass mail/normal-auth"
+
+account example-oauth
+auth xoauth2
+host smtp.office365.com
+port 587
+tls_starttls on
+from example@outlook.com
+user example@outlook.com
+passwordeval "$HOME/.local/bin/mutt_oauth2.py $HOME/.local/var/mail/example@outlook.com.tokens"

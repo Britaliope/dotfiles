@@ -1,0 +1,48 @@
+### IMT
+IMAPAccount normal-auth
+PipelineDepth 20
+Host z.example.com
+User normal.auth.email@example.com
+PassCmd "pass mail/normal-auth"
+SSLType IMAPS
+
+IMAPStore normal-auth-remote
+Account normal-auth
+
+MaildirStore normal-auth-local
+Path ~/.local/var/mail/normal-auth/
+Inbox ~/.local/var/mail/normal-auth/Inbox
+Subfolders Verbatim
+
+Channel normal-auth
+Far :normal-auth-remote:
+Near :normal-auth-local:
+Patterns *
+Create Both
+SyncState *
+Expunge Both
+
+### Qb
+IMAPAccount example-oauth
+PipelineDepth 20
+Host outlook.office365.com
+User example@outlook.com
+AuthMechs XOAUTH2
+PassCmd "~/.local/bin/mutt_oauth2.py ~/.local/var/mail/example@outlook.com.tokens"
+SSLType IMAPS
+
+IMAPStore example-oauth-remote
+Account example-oauth
+
+MaildirStore example-oauth-local
+Path ~/.local/var/mail/example-oauth/
+Inbox ~/.local/var/mail/example-oauth/Inbox
+Subfolders Verbatim
+
+Channel example-oauth
+Far :example-oauth-remote:
+Near :example-oauth-local:
+Patterns *
+Create Both
+SyncState *
+Expunge Both

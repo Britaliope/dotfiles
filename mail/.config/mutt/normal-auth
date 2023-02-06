@@ -1,0 +1,24 @@
+unmailboxes *
+
+set from="normal.auth.email@example.com"
+set realname="Jean DOUX"
+
+set mbox_type = Maildir
+set folder="$HOME/.local/var/mail/normal-auth/"
+
+set sendmail="msmtp -a normal-auth"
+
+mailboxes =Inbox
+mailboxes =Drafts
+mailboxes =Sent
+mailboxes =Junk
+mailboxes =Trash
+
+set spoolfile="+Inbox"
+set postponed="+Drafts"
+set record="+Sent"
+set trash="+Trash"
+
+unset crypt_autopgp
+unset crypt_autosign
+unset crypt_autoencrypt

@@ -1,0 +1,89 @@
+# Core (mail related) features.
+set move=no
+set imap_keepalive=900
+
+set mail_check = 60
+set mail_check_stats
+set hidden_host
+
+set nobeep
+
+set charset=utf-8
+set noallow_8bit
+
+alternative_order text/plain text/enriched text/html
+
+set sidebar_visible
+set sidebar_width=32
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+
+source "$HOME/.config/mutt/bindings"
+
+source "$HOME/.config/mutt/qb"
+# Last one is the one which get loaded by default
+source "$HOME/.config/mutt/imt"
+
+macro index <f1> '<enter-command>source $HOME/.config/mutt/imt<enter><change-folder>!<enter>'
+macro index <f2> '<enter-command>source $HOME/.config/mutt/qb<enter><change-folder>!<enter>'
+
+# Search macro
+macro generic ,f "<shell-escape>mairix " "search with mairix"
+macro generic ,,f "<change-folder><kill-line>=.Search<enter>" "load the search results mailbox"
+
+# Look and feel related features.
+set sort=threads
+set sort_aux=last-date-received
+set uncollapse_jump
+set pager_index_lines=10
+
+set text_flowed=yes
+
+# Start vim in insert mode and
+set editor="vim -c 'startinsert' -c 'set cc=70' "
+
+# - colorscheme
+color normal     color253 color234
+#color indicator  color253 color233
+color indicator  color1 color233
+color status     color110 color16
+color tree       color208 color234
+color signature  color102 color234
+color message    color253 color234
+color attachment color117 color234
+color error      color30  color234
+color tilde      color130 color234
+color search     color100 default
+color markers    color138 default
+
+color quoted     color107 color234
+color quoted1    color66  color234
+color quoted2    color32  color234
+color quoted3    color30  color234
+color quoted4    color99  color234
+color quoted5    color36  color234
+color quoted6    color114 color234
+color quoted7    color109 color234
+color quoted8    color41  color234
+color quoted9    color138 color234
+
+color index      color202 color234 ~F
+color index      color39  color234 ~N
+color index      color39  color234 ~O
+color index      color229 color234 ~T
+color index      color240 color234 ~D
+
+color hdrdefault color30  color233
+color header     color132 color233 '^date:'
+color header     color153 color233 '^(to|cc|bcc):'
+color header     color120 color233 '^from:'
+color header     color178 color233 '^subject:'
+color header     color31  color233 '^user-agent'
+color header     color29  color233 '^reply-to'
+color sidebar_new yellow  default
+
+# auto_view text/html
+
+set crypt_verify_sig
+
+source /usr/share/doc/mutt/samples/gpg.rc
+

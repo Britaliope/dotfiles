@@ -1,0 +1,10 @@
+[Unit]
+Description=Run mbsync
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=mbsync --all
+
+[Install]
+WantedBy=default.target
