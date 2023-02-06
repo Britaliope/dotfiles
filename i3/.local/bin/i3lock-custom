@@ -1,5 +1,7 @@
 #!/bin/bash
 
+gpgconf --reload gpg-agent
+
 i3lock \
     --ignore-empty-password \
     --image $(find $HOME/.local/share/spotlight-from-reddit/lock -maxdepth 1 -name "*.jpg" | shuf -n1) \
