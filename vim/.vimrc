@@ -4,9 +4,12 @@ Plug 'https://github.com/EdJoJob/llvmir-vim'
 Plug 'valloric/youcompleteme'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'dpelle/vim-LanguageTool'
 
 call plug#end()
 
+let g:languagetool_cmd='/usr/bin/languagetool'
+" let g:languagetool_jar='/usr/share/java/languagetool/languagetool-commandline.jar'
 
 set number
 set hls
