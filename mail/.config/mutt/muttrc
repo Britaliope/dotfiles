@@ -11,6 +11,10 @@ set nobeep
 set charset=utf-8
 set noallow_8bit
 
+set mailcap_path=$HOME/.config/mutt/mailcap
+set implicit_autoview=yes
+set allow_ansi
+
 alternative_order text/plain text/enriched text/html
 
 set sidebar_visible
@@ -39,7 +43,7 @@ set pager_index_lines=10
 set text_flowed=yes
 
 # Start vim in insert mode and
-set editor="vim -c 'startinsert' -c 'set cc=70' "
+set editor="vim -c 'startinsert' -c 'set cc=70' -c 'set tw=70'"
 
 # - colorscheme
 color normal     color253 color234
@@ -81,9 +85,13 @@ color header     color31  color233 '^user-agent'
 color header     color29  color233 '^reply-to'
 color sidebar_new yellow  default
 
-# auto_view text/html
+auto_view text/html
 
 set crypt_verify_sig
+
+set crypt_autopgp
+set crypt_autosign
+set crypt_protected_headers_write
 
 source /usr/share/doc/mutt/samples/gpg.rc
 

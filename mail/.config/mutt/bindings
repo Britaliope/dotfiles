@@ -4,3 +4,5 @@ bind index,pager C sidebar-open
 
 bind index,pager t next-entry
 bind index,pager s previous-entry
+
+macro pager \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview' 
