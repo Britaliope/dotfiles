@@ -1,0 +1,10 @@
+[Unit]
+Description=Run vdirsyncer at boot and every 10 minutes
+
+[Timer]
+OnBootSec=3min
+OnUnitActiveSec=10min
+Persistent=True
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,50 @@
+[general]
+status_path = "~/.local/var/vdirsyncer/status/"
+
+[pair zimbra_contacts]
+a = "zimbra_local_contacts"
+b = "zimbra_remote_contacts"
+collections = ["from b"]
+
+[storage zimbra_local_contacts]
+type = "filesystem"
+path = "~/.local/share/contacts/zimbra"
+fileext = ".vcf"
+
+[storage zimbra_remote_contacts]
+type = "carddav"
+url = "https://z.example.com/dav/username%40example.com/"
+username = "username/example.com"
+password.fetch = ["command", "pass", "mail/zimbra"]
+
+[pair zimbra_calendar]
+a = "zimbra_local_calendar"
+b = "zimbra_remote_calendar"
+collections = ["from b", "from a"]
+
+[storage zimbra_local_calendar]
+type = "filesystem"
+path = "~/.local/share/calendar/zimbra"
+fileext = ".ics"
+
+[storage zimbra_remote_calendar]
+type = "caldav"
+url = "https://z.example.com/dav/username%40example.com/"
+username = "username@example.com"
+password.fetch = ["command", "pass", "mail/zimbra"]
+
+[pair davmail]
+a = "davmail_local"
+b = "davmail_remote"
+collections = ["from b"]
+
+[storage davmail_local]
+type = "filesystem"
+path = "~/.local/share/contacts/davmail"
+fileext = ".vcf"
+
+[storage davmail_remote]
+type = "carddav"
+url = "http://localhost:1080/users/example@outlook.com/contacts/"
+username = "example@outlook.com"
+password = "you-dont-need-to-set-this-configure-davmail-to-use-modern-interactive-auth"
