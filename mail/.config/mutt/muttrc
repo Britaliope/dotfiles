@@ -45,6 +45,9 @@ set text_flowed=yes
 # Start vim in insert mode and
 set editor="vim -c 'startinsert' -c 'set cc=70' -c 'set tw=70'"
 
+# khard query command
+set query_command = "echo %s | xargs khard email --parsable --search-in-source-files --"
+
 # - colorscheme
 color normal     color253 color234
 #color indicator  color253 color233
