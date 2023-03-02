@@ -1,0 +1,4 @@
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
+image/*; chafa -c 240 -w 9 -s ${COLUMNS:-80} -- %s; copiousoutput
+text/markdown; bat --color=always --terminal-width=${COLUMNS:-80} %s; copiousoutput;
+application/pdf; pdftotext - -; copiousoutput;
