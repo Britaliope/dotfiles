@@ -1,0 +1,45 @@
+#!/bin/bash
+
+set -euo pipefail;
+
+DELTA=24h;
+
+CRITICAL=$(echo "60*30" | bc) # 30min
+WARNING=$(echo "60*60*2" | bc) # 2h
+INFO=$(echo "60*60*6" | bc) # 6h
+
+# Get two dates t1 and t2 and returns t2-t1 in seconds
+function datediff() {
+    date -ud@$(($(date -ud"$2" +%s)-$(date -ud"$1" +%s))) +%s;
+}
+
+function notify-next() {
+    notify-send "$(khal list --notstarted -f "{title}" -df "" now 24h | head -n1)" "$(khal list --notstarted -f "{location}" -df "" now 24h | head -n1)"
+}
+
+NEXT=$(khal list --notstarted -f "{start}" -df "" now $DELTA | head -n1);
+
+delay=$(datediff "$(date)" "$NEXT")
+
+next="$(date -ud@"$delay" "+%Hh%M")";
+
+if [ $delay -lt $CRITICAL ]; then COLOR="#FF0000";
+elif [ $delay -lt $WARNING ]; then COLOR="#FFAE00";
+elif [ $delay -lt $INFO ]; then COLOR="#222225";
+else next="";
+fi;
+
+now="$(khal at -df "" -f "{title}")"
+
+now_l=""
+next_l=""
+
+if [ -n "$now" ]; then now_l="<span color=\"#00FF00\">$now</span>"; fi;
+if [ -n "$next" ]; then next_l="↪ <span color=\"$COLOR\">next: $next</span>"; fi;
+
+button=${button:-0}
+if [ $button -ne 0 ]; then notify-next; fi;
+
+echo "$now_l $next_l";
+echo "$now $next";
+

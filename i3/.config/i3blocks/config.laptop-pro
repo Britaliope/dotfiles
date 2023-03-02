@@ -31,6 +31,10 @@ command=~/.config/i3blocks/scripts/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+[khal]
+separator=true
+interval=60
+markup=pango
 
 # Volume indicator
 [volume-pipewire]

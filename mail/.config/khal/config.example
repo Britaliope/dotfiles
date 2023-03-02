@@ -1,0 +1,10 @@
+[calendars]
+
+  [[IMT Calendar]]
+    path = ~/.local/share/calendar/zimbra/Calendar
+    color = dark green
+    priority = 20
+
+[keybindings]
+
+
