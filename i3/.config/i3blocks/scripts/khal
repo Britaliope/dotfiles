@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euo pipefail;
+set -exuo pipefail;
 
 DELTA=24h;
 
@@ -17,16 +17,18 @@ function notify-next() {
     notify-send "$(khal list --notstarted -f "{title}" -df "" now 24h | head -n1)" "$(khal list --notstarted -f "{location}" -df "" now 24h | head -n1)"
 }
 
-NEXT=$(khal list --notstarted -f "{start}" -df "" now $DELTA | head -n1);
+next=$(khal list --notstarted -f "{start}" -df "" now $DELTA | head -n1);
 
-delay=$(datediff "$(date)" "$NEXT")
+if [ -n "$next" ]; then delay=$(datediff "$(date)" "$next");
 
 next="$(date -ud@"$delay" "+%Hh%M")";
 
 if [ $delay -lt $CRITICAL ]; then COLOR="#FF0000";
 elif [ $delay -lt $WARNING ]; then COLOR="#FFAE00";
-elif [ $delay -lt $INFO ]; then COLOR="#222225";
+elif [ $delay -lt $INFO ]; then COLOR="#AAAAAA";
 else next="";
+fi;
+
 fi;
 
 now="$(khal at -df "" -f "{title}")"
