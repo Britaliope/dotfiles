@@ -7,6 +7,7 @@ Plug 'honza/vim-snippets'
 Plug 'dpelle/vim-LanguageTool'
 Plug 'https://github.com/tmatilai/gitolite.vim.git'
 Plug 'sainnhe/sonokai'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
