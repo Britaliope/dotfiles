@@ -6,6 +6,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'dpelle/vim-LanguageTool'
 Plug 'https://github.com/tmatilai/gitolite.vim.git'
+Plug 'sainnhe/sonokai'
 
 call plug#end()
 
@@ -19,7 +20,16 @@ set foldlevelstart=999
 
 set mouse=a
 
-colorscheme ron
+" Important!!
+if has('termguicolors')
+  set termguicolors
+endif
+
+" The configuration options should be placed before `colorscheme sonokai`.
+let g:sonokai_style = 'atlantis'
+let g:sonokai_better_performance = 1
+
+colorscheme sonokai
 
 filetype plugin indent on
 set tabstop=4
