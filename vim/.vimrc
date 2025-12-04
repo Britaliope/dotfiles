@@ -1,19 +1,20 @@
 call plug#begin()
 
 Plug 'https://github.com/EdJoJob/llvmir-vim'
-Plug 'valloric/youcompleteme'
+Plug 'ycm-core/youcompleteme'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'dpelle/vim-LanguageTool'
 Plug 'https://github.com/tmatilai/gitolite.vim.git'
 Plug 'sainnhe/sonokai'
 Plug 'sheerun/vim-polyglot'
+Plug 'PatrBal/vim-textidote'
 
 call plug#end()
 
-" let g:languagetool_cmd='/usr/bin/languagetool'
-" let g:languagetool_jar='/usr/share/java/languagetool/languagetool-commandline.jar'
-let g:languagetool_jar='/home/bmateu/Downloads/LanguageTool-5.9/languagetool-commandline.jar'
+let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/youcompleteme/.ycm_extra_conf.py'
+
+let g:textidote_jar='/usr/share/java/textidote.jar'
+let g:textidote_ignore_macros='todo'
 
 set number
 set hls
@@ -42,6 +43,8 @@ source ~/.vim/bepo.vimrc
 set listchars=tab:↹\ ,nbsp:␣
 set list
 
+:set spell spelllang=en_us
+
 " highlight trailing whitespaces and space before tabs
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$\| \+\ze\t/
@@ -56,4 +59,7 @@ let g:UltiSnipsExpandTrigger       = '<c-j>'
 " let g:UltiSnipsListSnippets        = '<c-l>'
 " let g:UltiSnipsJumpForwardTrigger  = '<c-j>'
 " let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
+
+set swapfile
+set backup
 
