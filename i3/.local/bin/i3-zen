@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -euo pipefail
+
+
+enable_zen () {
+i3-msg "split horizontal; focus parent; fullscreen enable; gaps horizontal current set 300; focus child; border pixel 0; mark --add zen"
+}
+
+disable_zen () {
+i3-msg "unmark zen; border pixel 3; gaps horizontal current set 5; focus parent; fullscreen disable; focus child; move bottom;"
+}
+
+if i3get --print m | grep "zen"
+then
+    disable_zen
+else
+    enable_zen
+fi

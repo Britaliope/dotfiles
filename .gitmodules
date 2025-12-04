@@ -8,3 +8,6 @@
 [submodule "urxvt/.urxvt/ext/resize-font"]
 	path = urxvt/.urxvt/ext/resize-font
 	url = https://github.com/simmel/urxvt-resize-font.git
+[submodule "i3/.local/bin/i3-quiet"]
+	path = i3/.local/bin/i3-quiet
+	url = https://github.com/vrde/i3-quiet.git
